@@ -1,0 +1,26 @@
+nav {
+	background-color: #4056a1;
+	color: #ffffff;
+	display: flex;
+	height: 120px;
+	justify-content: space-between;
+	padding: 0 1.5em;
+	width: 100%;
+}
+
+nav > span {
+	align-self: center;
+	font-family: 'Bungee', sans-serif;
+}
+
+nav div {
+	text-align: center;
+}
+
+nav p {
+	margin-bottom: 0.5em;
+}
+
+nav p span {
+	font-weight: bold;
+}
