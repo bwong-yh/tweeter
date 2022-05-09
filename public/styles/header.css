@@ -1,0 +1,10 @@
+header {
+	background: orange url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+	height: 400px;
+	text-align: center;
+	width: 100%;
+}
+
+header h2 {
+	margin-top: 0.5rem;
+}
