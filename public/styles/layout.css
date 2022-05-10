@@ -28,6 +28,10 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+.error {
+	color: #ff0000;
+}
+
 main {
 	margin: auto;
 	width: 90%;

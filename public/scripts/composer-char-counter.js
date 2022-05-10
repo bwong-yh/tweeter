@@ -1,9 +1,9 @@
 // responsible for character counter
 $(document).ready(function() {
-	$(".new-tweet").keyup(function() {
-		const char = $("#tweet-text").val();
+	$("#tweet-text").keyup(function() {
+		const char = $(this).val();
 		const remainChar = 140 - char.length;
 
-		$(".counter").text(remainChar);
+		$(this).siblings().children(".counter").text(remainChar).toggleClass("error", remainChar < 0);
 	});
 });
