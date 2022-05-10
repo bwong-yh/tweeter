@@ -1,0 +1,27 @@
+form label {
+	font-weight: bold;
+}
+
+form textarea {
+	background-color: #f4f1ec;
+	border: 0;
+	border-bottom: 2.5px solid #000000;
+	height: 2.5rem;
+	margin-top: 1rem;
+	outline: none;
+	width: 100%;
+}
+
+form div {
+	display: flex;
+	font-family: 'Bungee', sans-serif;
+	justify-content: space-between;
+	margin: 1rem 0;
+}
+
+form button {
+	background-color: #4056a1;
+	border: 0;
+	color: #ffffff;
+	padding: 0.25em 0.5em;
+}
