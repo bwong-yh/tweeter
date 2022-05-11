@@ -1,0 +1,57 @@
+.tweet {
+	border: 3px solid #000000;
+	padding: 0.3em;
+}
+
+.tweet > * {
+	padding: 0 0.4em;
+}
+
+.tweet:hover {
+	box-shadow: 10px 10px rgba(64, 86, 161, 0.75);
+}
+
+.tweet:hover .handler {
+	font-weight: bold;
+}
+
+.tweet header,
+.tweet footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.tweet header div:first-child {
+	display: flex;
+}
+
+.tweet .avatar {
+	align-self: center;
+	display: inline-block;
+	height: 25%;
+	margin-right: 0.5rem;
+	width: 25%;
+}
+
+.tweet .handler {
+	color: #aaaaaa;
+}
+
+.tweet > p {
+	font-weight: bold;
+}
+
+.tweet footer {
+	border-top: 3px solid #000000;
+	font-size: 1.25rem;
+}
+
+.tweet i {
+	margin-left: 0.5rem;
+}
+
+.tweet i:hover {
+	color: #ffa500;
+	cursor: pointer;
+}

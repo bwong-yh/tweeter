@@ -9,6 +9,7 @@ form textarea {
 	height: 2.5rem;
 	margin-top: 1rem;
 	outline: none;
+	resize: vertical;
 	width: 100%;
 }
 

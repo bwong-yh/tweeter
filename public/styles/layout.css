@@ -37,6 +37,6 @@ main {
 	width: 90%;
 }
 
-main section {
-	margin: 2rem 0;
+main > * {
+	margin: 3.5rem 0;
 }
