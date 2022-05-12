@@ -11,7 +11,7 @@
 	box-shadow: 10px 10px rgba(64, 86, 161, 0.75);
 }
 
-.tweet:hover .handler {
+.tweet:hover .handle {
 	font-weight: bold;
 }
 
@@ -34,7 +34,7 @@
 	width: 25%;
 }
 
-.tweet .handler {
+.tweet .handle {
 	color: #aaaaaa;
 }
 
