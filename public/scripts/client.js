@@ -39,20 +39,33 @@ const renderTweets = (data) => {
 const createTweetElement = (tweetData) => {
 	return `
   <article class="tweet">
-      <header>
-        <div>
-          <img class="avatar" src="${tweetData.user.avatars}" alt="">
-          <p>${tweetData.user.name}</p>
-        </div>
-        <p class="handle">${tweetData.user.handle}</p>
-      </header>
-      <p>${tweetData.content.text}</p>
-      <footer>
-        <p>${new Date(tweetData.created_at)}</p>
+    <header>
+      <div>
+        <img class="avatar" src="${tweetData.user.avatars}" alt="">
+        <p>${tweetData.user.name}</p>
+      </div>
+      <p class="handle">${tweetData.user.handle}</p>
+    </header>
+    <p>${tweetData.content.text}</p>
+    <footer>
+      <p>${new Date(tweetData.created_at)}</p>
       <div><i class="fa-solid fa-flag"></i> <i class="fa-solid fa-retweet"></i> <i class="fa-solid fa-heart"></i></div>
-      </footer>
-    </article>
+    </footer>
+  </article>
   `;
 };
 
 renderTweets(data);
+
+// form handling
+$("form").submit(function(e) {
+	e.preventDefault();
+
+	const text = $(this).children("#tweet-text").serialize();
+
+	// sending post req
+	$.post("/tweets", text);
+
+	// clear textarea
+	$(this).children("#tweet-text").val("");
+});
