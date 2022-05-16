@@ -38,16 +38,22 @@ const loadTweets = () => {
 $(function() {
 	loadTweets();
 
-	// form handling
+	// handle new tweet form
 	$("form").on("submit", function(e) {
 		e.preventDefault();
 
-		const text = $(this).children("#tweet-text").serialize();
+		const tweet = $(this).children("#tweet-text").val();
 
-		// sending post req
-		$.post("/tweets", text);
+		// make sure tweet is not "" or too long
+		if (!tweet || $(this).find("#char-counter").hasClass("error")) {
+			alert("Uh oh, Something's wrong!");
+		} else {
+			// send post req if valid
+			$.post("/tweets", $(this).serialize());
 
-		// clear textarea
-		$(this).children("#tweet-text").val("");
+			// clear textarea and reset counter
+			$(this).children("#tweet-text").val("");
+			$(this).find("#char-counter").removeClass("error").text("140");
+		}
 	});
 });
