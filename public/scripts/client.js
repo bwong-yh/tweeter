@@ -4,10 +4,15 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const escapeText = function(str) {
+const escapeText = (str) => {
 	const div = document.createElement("div");
 	div.appendChild(document.createTextNode(str));
 	return div.innerHTML;
+};
+
+const displayErrorMessage = (errMessage) => {
+	$(".error-message span").text(errMessage);
+	$(".new-tweet aside").slideDown("300");
 };
 
 const renderTweets = (data) => {
@@ -56,9 +61,13 @@ $(function() {
 		const tweet = $(this).children("#tweet-text").val();
 
 		// make sure tweet is not "" or too long
-		if (!tweet || $(this).find("#char-counter").hasClass("error")) {
-			alert("Uh oh, Something's wrong!");
+		if (!tweet) {
+			displayErrorMessage("Nothing is entered, what's the message?");
+		} else if ($(this).find("#char-counter").hasClass("error")) {
+			displayErrorMessage("Message is too long, please shorten it to 140 characters.");
 		} else {
+			// remove err message if not errors
+			$(".new-tweet aside").css("display", "none");
 			// send post req if valid & add tweet to #tweet-container
 			$.post("/tweets", $(this).serialize()).done(() => {
 				reloadTweets();
