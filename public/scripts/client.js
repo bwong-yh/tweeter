@@ -33,7 +33,7 @@ const createTweetElement = (tweetData) => {
     </header>
     <p>${escapeText(tweetData.content.text)}</p>
     <footer>
-      <p>${timeago.format(new Date(tweetData.created_at))}</p>
+      <p id="post-time">${timeago.format(new Date(tweetData.created_at))}</p>
       <div><i class="fa-solid fa-flag"></i> <i class="fa-solid fa-retweet"></i> <i class="fa-solid fa-heart"></i></div>
     </footer>
   </article>
@@ -44,9 +44,16 @@ const loadTweets = () => {
 	$.get("/tweets", (data) => renderTweets(data));
 };
 
-const reloadTweets = () => {
-	// grab the newest tweet from db and prepend to #tweet-container
-	$.get("/tweets", (data) => $("#tweets-container").prepend(createTweetElement(data[0])));
+const loadNewTweet = () => {
+	$.get("/tweets", (data) => {
+		// grab the newest tweet from db and prepend to #tweet-container
+		$("#tweets-container").prepend(createTweetElement(data[0]));
+
+		// update previous tweets' post time (10 sec. difference)
+		$(".tweet #post-time").each(function(index) {
+			console.log($(this).text(`${timeago.format(new Date(data[index].created_at))}`));
+		});
+	});
 };
 
 // calls loadTweets() & enables tweets posting when DOM is ready
@@ -70,7 +77,7 @@ $(function() {
 			$(".new-tweet aside").css("display", "none");
 			// send post req if valid & add tweet to #tweet-container
 			$.post("/tweets", $(this).serialize()).done(() => {
-				reloadTweets();
+				loadNewTweet();
 			});
 
 			// clear textarea and reset counter
