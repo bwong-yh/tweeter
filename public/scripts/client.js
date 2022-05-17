@@ -33,6 +33,11 @@ const loadTweets = () => {
 	$.get("/tweets", (data) => renderTweets(data));
 };
 
+const reloadTweets = () => {
+	// grab the newest tweet from db and prepend to #tweet-container
+	$.get("/tweets", (data) => $("#tweets-container").prepend(createTweetElement(data[0])));
+};
+
 // calls loadTweets() & enables tweets posting when DOM is ready
 // https://stackoverflow.com/questions/65941258/why-jquery-ready-has-strikethrough
 $(function() {
@@ -48,8 +53,10 @@ $(function() {
 		if (!tweet || $(this).find("#char-counter").hasClass("error")) {
 			alert("Uh oh, Something's wrong!");
 		} else {
-			// send post req if valid
-			$.post("/tweets", $(this).serialize());
+			// send post req if valid & add tweet to #tweet-container
+			$.post("/tweets", $(this).serialize()).done(() => {
+				reloadTweets();
+			});
 
 			// clear textarea and reset counter
 			$(this).children("#tweet-text").val("");
