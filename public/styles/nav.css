@@ -20,6 +20,10 @@ nav div {
 	text-align: center;
 }
 
+nav div:hover {
+	cursor: pointer;
+}
+
 nav p {
 	margin-bottom: 0.5rem;
 }

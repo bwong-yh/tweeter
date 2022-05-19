@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Mics. Functions
 const escapeText = (str) => {
 	const div = document.createElement("div");
 	div.appendChild(document.createTextNode(str));
@@ -15,6 +16,9 @@ const displayErrorMessage = (errMessage) => {
 	$(".new-tweet aside").slideDown("300");
 };
 
+const toggleForm = () => {};
+
+// Render Tweets Functions
 const renderTweets = (data) => {
 	data.forEach((tweet) => {
 		$("#tweets-container").append(createTweetElement(tweet));
@@ -51,7 +55,7 @@ const loadNewTweet = () => {
 
 		// update previous tweets' post time (10 sec. difference)
 		$(".tweet #post-time").each(function(index) {
-			console.log($(this).text(`${timeago.format(new Date(data[index].created_at))}`));
+			$(this).text(`${timeago.format(new Date(data[index].created_at))}`);
 		});
 	});
 };
@@ -60,6 +64,7 @@ const loadNewTweet = () => {
 // https://stackoverflow.com/questions/65941258/why-jquery-ready-has-strikethrough
 $(function() {
 	loadTweets();
+	toggleForm();
 
 	// handle new tweet form
 	$("form").on("submit", function(e) {
@@ -73,7 +78,7 @@ $(function() {
 		} else if ($(this).find("#char-counter").hasClass("error")) {
 			displayErrorMessage("Message is too long, please shorten it to 140 characters.");
 		} else {
-			// remove err message if not errors
+			// remove err message if no errors
 			$(".new-tweet aside").css("display", "none");
 			// send post req if valid & add tweet to #tweet-container
 			$.post("/tweets", $(this).serialize()).done(() => {
