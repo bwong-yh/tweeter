@@ -3,6 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
 	box-sizing: border-box;
 }
@@ -30,6 +31,14 @@ body {
 
 .error {
 	color: #ff0000;
+}
+
+/* reason for using .hide instead of display: none is to allow accessibiliyt for screen reader */
+/* https://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/ */
+.hide {
+	position: absolute !important;
+	top: -9999px !important;
+	left: -9999px !important;
 }
 
 main {

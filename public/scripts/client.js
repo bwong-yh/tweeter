@@ -5,27 +5,34 @@
  */
 
 // Mics. Functions
-const escapeText = (str) => {
+const displayErrorMessage = errMessage => {
+	$(".error-message span").text(errMessage);
+	$(".new-tweet aside").slideDown("300");
+};
+
+const escapeText = str => {
 	const div = document.createElement("div");
 	div.appendChild(document.createTextNode(str));
 	return div.innerHTML;
 };
 
-const displayErrorMessage = (errMessage) => {
-	$(".error-message span").text(errMessage);
-	$(".new-tweet aside").slideDown("300");
-};
-
-const toggleForm = () => {};
-
-// Render Tweets Functions
-const renderTweets = (data) => {
-	data.forEach((tweet) => {
-		$("#tweets-container").append(createTweetElement(tweet));
+const toggleForm = () => {
+	$("nav div").on("click", function() {
+		$("#tweet-text").focus();
+		if ($(".new-tweet").hasClass("hide")) {
+			$(".new-tweet").slideUp(0, function() {
+				$(".new-tweet").removeClass("hide").slideDown("fast");
+			});
+		} else {
+			$(".new-tweet").slideUp("fast", function() {
+				$(".new-tweet").addClass("hide").slideDown(0);
+			});
+		}
 	});
 };
 
-const createTweetElement = (tweetData) => {
+// Tweets Functions
+const createTweetElement = tweetData => {
 	return `
   <article class="tweet">
     <header>
@@ -44,12 +51,18 @@ const createTweetElement = (tweetData) => {
   `;
 };
 
+const renderTweets = data => {
+	data.forEach(tweet => {
+		$("#tweets-container").append(createTweetElement(tweet));
+	});
+};
+
 const loadTweets = () => {
-	$.get("/tweets", (data) => renderTweets(data));
+	$.get("/tweets", data => renderTweets(data));
 };
 
 const loadNewTweet = () => {
-	$.get("/tweets", (data) => {
+	$.get("/tweets", data => {
 		// grab the newest tweet from db and prepend to #tweet-container
 		$("#tweets-container").prepend(createTweetElement(data[0]));
 
@@ -60,12 +73,7 @@ const loadNewTweet = () => {
 	});
 };
 
-// calls loadTweets() & enables tweets posting when DOM is ready
-// https://stackoverflow.com/questions/65941258/why-jquery-ready-has-strikethrough
-$(function() {
-	loadTweets();
-	toggleForm();
-
+const writeNewTweet = () => {
 	// handle new tweet form
 	$("form").on("submit", function(e) {
 		e.preventDefault();
@@ -90,4 +98,12 @@ $(function() {
 			$(this).find("#char-counter").removeClass("error").text("140");
 		}
 	});
+};
+
+// enables all functions when DOM is ready
+// https://stackoverflow.com/questions/65941258/why-jquery-ready-has-strikethrough
+$(function() {
+	loadTweets();
+	toggleForm();
+	writeNewTweet();
 });
