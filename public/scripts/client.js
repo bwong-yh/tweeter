@@ -18,10 +18,11 @@ const escapeText = str => {
 
 const toggleForm = () => {
 	$("nav div").on("click", function() {
-		$("#tweet-text").focus();
 		if ($(".new-tweet").hasClass("hide")) {
 			$(".new-tweet").slideUp(0, function() {
-				$(".new-tweet").removeClass("hide").slideDown("fast");
+				$(".new-tweet").removeClass("hide").slideDown("fast", function() {
+					$("#tweet-text").focus();
+				});
 			});
 		} else {
 			$(".new-tweet").slideUp("fast", function() {
