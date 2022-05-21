@@ -32,3 +32,18 @@ nav p {
 nav p span {
 	font-weight: bold;
 }
+
+/* custom CSS when scroll down */
+.custom-nav {
+	height: 60px;
+}
+
+.custom-nav-div {
+	display: flex;
+	align-items: center;
+}
+
+.custom-nav-div-p {
+	margin: 0;
+	margin-right: 0.5rem;
+}

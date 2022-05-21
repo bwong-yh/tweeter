@@ -7,7 +7,6 @@ $(function() {
 
 	// scroll to the top of the page when clickend
 	scrollBtn.on("click", function(e) {
-		console.log("click");
 		$("html").animate({ scrollTop: 0 }, "slow");
 	});
 });

@@ -9,7 +9,7 @@
 	height: 3.75rem;
 	margin: 0;
 	opacity: 0.75;
-	right: 2%;
+	right: calc(0% + 20px);
 	transition: opacity 500ms ease-out;
 	width: 3.75rem;
 }
