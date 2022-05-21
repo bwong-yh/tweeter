@@ -9,6 +9,7 @@ nav {
 	padding: 0 1.5em;
 	top: 0;
 	width: 100%;
+	z-index: 99;
 }
 
 nav > span {

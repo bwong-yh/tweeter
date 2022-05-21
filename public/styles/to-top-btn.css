@@ -1,0 +1,19 @@
+.to-top-btn {
+	position: fixed;
+	bottom: 2%;
+	background-color: #4056a1;
+	border: 0px;
+	border-radius: 100%;
+	color: #ffffff;
+	cursor: pointer;
+	height: 3.75rem;
+	margin: 0;
+	opacity: 0.75;
+	right: 2%;
+	transition: opacity 500ms ease-out;
+	width: 3.75rem;
+}
+
+.to-top-btn:hover {
+	opacity: 1;
+}
