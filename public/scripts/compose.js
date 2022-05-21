@@ -3,7 +3,7 @@ $(function() {
 	$("nav div").on("click", function() {
 		if ($(".new-tweet").hasClass("hide")) {
 			$(".new-tweet").slideUp(0, function() {
-				// slideUp is specifically for the first click so that .new-tweet will not POP up, but slide down
+				// slideUp is specifically for the first time clicking so that .new-tweet will not POP up, but slide down
 				$(".new-tweet").removeClass("hide").slideDown("fast", function() {
 					$("#tweet-text").focus();
 				});
