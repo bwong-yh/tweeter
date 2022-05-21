@@ -16,22 +16,6 @@ const escapeText = str => {
 	return div.innerHTML;
 };
 
-const toggleForm = () => {
-	$("nav div").on("click", function() {
-		if ($(".new-tweet").hasClass("hide")) {
-			$(".new-tweet").slideUp(0, function() {
-				$(".new-tweet").removeClass("hide").slideDown("fast", function() {
-					$("#tweet-text").focus();
-				});
-			});
-		} else {
-			$(".new-tweet").slideUp("fast", function() {
-				$(".new-tweet").addClass("hide").slideDown(0);
-			});
-		}
-	});
-};
-
 // Tweets Functions
 const createTweetElement = tweetData => {
 	return `
@@ -105,6 +89,5 @@ const writeNewTweet = () => {
 // https://stackoverflow.com/questions/65941258/why-jquery-ready-has-strikethrough
 $(function() {
 	loadTweets();
-	toggleForm();
 	writeNewTweet();
 });
