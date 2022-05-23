@@ -15,7 +15,7 @@ $(function() {
 	});
 
 	// to-top-button is visible when window.scrollY > 200
-	const scrollBtn = $(".container .to-top-btn");
+	const scrollBtn = $("main .to-top-btn");
 	$(document).on("scroll", function() {
 		window.scrollY < 200 ? $(scrollBtn).addClass("v-none") : $(scrollBtn).removeClass("v-none");
 	});
