@@ -30,7 +30,7 @@ body {
   color: #ff0000;
 }
 
-/* reason for using .hide instead of display: none is to allow accessibiliyt for screen reader */
+/* reason for using .hide instead of display: none is to allow accessibiliy for screen reader */
 /* https://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/ */
 .hide {
   position: absolute !important;
