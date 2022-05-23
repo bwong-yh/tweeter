@@ -1,0 +1,53 @@
+$background-color:#4056a1;
+$font-color: #ffffff;
+
+nav {
+	position: fixed;
+	background-color: $background-color;
+	color: $font-color;
+	display: flex;
+	height: 120px;
+	left: 0;
+	justify-content: space-between;
+	padding: 0 1.5em;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+
+	& > span {
+		align-self: center;
+		font-family: 'Bungee', sans-serif;
+	}
+
+	div {
+		text-align: center;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	p {
+		margin-bottom: 0.5rem;
+
+		span {
+			font-weight: bold;
+		}
+	}
+}
+
+/* custom CSS when scroll down */
+.custom-nav {
+	height: 60px;
+
+	&-div {
+		display: flex;
+		align-items: center;
+
+		&-p {
+			margin: 0;
+			margin-right: 0.5rem;
+		}
+	}
+}
+
