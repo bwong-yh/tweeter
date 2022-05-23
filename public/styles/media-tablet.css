@@ -1,0 +1,16 @@
+@media screen and (max-width: 1023px) {
+	.container {
+		flex-direction: column;
+		margin: 60px auto 0;
+		width: 100%;
+	}
+
+	.container header {
+		width: 100%;
+	}
+
+	main {
+		width: 90%;
+		margin: auto;
+	}
+}
