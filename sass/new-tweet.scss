@@ -1,0 +1,58 @@
+$error-border: 0.5px dashed #ff0000;
+$error-message-color: #ff0000;
+$form-font-family: 'Bungee', sans-serif;
+$form-textarea-background-color: #f4f1ec;
+$form-textarea-border: 2.5px solid #000000;
+$form-btn-background-color: #4056a1;
+$form-btn-color: #ffffff;
+
+.new-tweet {
+	aside {
+		display: none;
+		border: $error-border;
+		color: $error-message-color;
+		margin-bottom: 1.5rem;
+		text-align: center;
+
+		.error-message {
+			font-weight: bold;
+			margin: 0.5em 0;
+		}
+	}
+
+	form {
+		label {
+			font-weight: bold;
+		}
+
+		textarea {
+			background-color: $form-textarea-background-color;
+			border: 0;
+			border-bottom: $form-textarea-border;
+			height: 2.5rem;
+			min-height: 2.5rem;
+			margin-top: 1rem;
+			outline: none;
+			resize: vertical;
+			width: 100%;
+		}
+
+		div {
+			display: flex;
+			font-family: $form-font-family;
+			justify-content: space-between;
+			margin: 1rem 0;
+		}
+
+		button {
+			background-color: $form-btn-background-color;
+			border: 0;
+			color: $form-btn-color;
+			padding: 0.25em 0.5em;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}
