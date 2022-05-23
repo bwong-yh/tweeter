@@ -1,5 +1,6 @@
 $background-color:#4056a1;
 $font-color: #ffffff;
+$font-family: 'Bungee', sans-serif;
 
 nav {
 	position: fixed;
@@ -16,7 +17,7 @@ nav {
 
 	& > span {
 		align-self: center;
-		font-family: 'Bungee', sans-serif;
+		font-family: $font-family
 	}
 
 	div {
