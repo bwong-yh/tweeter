@@ -1,0 +1,8 @@
+main {
+	margin: auto;
+	width: 60%;
+
+	& > * {
+		margin: 3.5rem 0;
+	}
+}
