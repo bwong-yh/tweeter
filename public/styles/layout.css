@@ -45,11 +45,8 @@ body {
 	visibility: hidden;
 }
 
-main {
-	margin: auto;
+.container {
+	display: flex;
+	margin: 120px auto 0;
 	width: 90%;
-}
-
-main > * {
-	margin: 3.5rem 0;
 }

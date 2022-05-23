@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
   <link rel="stylesheet" href="/styles/to-top-btn.css" type="text/css" />
@@ -50,34 +51,33 @@
     </div>
   </nav>
 
-  <header>
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <h2>Billy Wong</h2>
-  </header>
+  <div class="container">
+    <header>
+      <div>
+        <img src="/images/profile-hex.png">
+      </div>
+      <h2>Billy Wong</h2>
+    </header>
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet hide">
-      <aside>
-        <p class="error-message"><i class="fa-solid fa-circle-exclamation"></i> <span></span></p>
-      </aside>
-
-      <form method="post" action="/tweets">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div>
-          <button type="submit">Tweet</button>
-          <output name="counter" id="char-counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-
-    <section id="tweets-container"></section>
-
-    <button class="to-top-btn v-none"><i class="fa-solid fa-turn-up"></i></button>
-  </main>
+    <!-- Page-specific (main) content here -->
+    <main>
+      <section class="new-tweet hide">
+        <aside>
+          <p class="error-message"><i class="fa-solid fa-circle-exclamation"></i> <span></span></p>
+        </aside>
+        <form method="post" action="/tweets">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" id="char-counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <section id="tweets-container"></section>
+      <button class="to-top-btn v-none"><i class="fa-solid fa-turn-up"></i></button>
+    </main>
+  </div>
 </body>
 
 </html>
