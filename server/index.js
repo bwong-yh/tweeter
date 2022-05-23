@@ -2,7 +2,7 @@
 
 // Basic express setup:
 
-const PORT = 8000; // change it back to 8080 later
+const PORT = 8080;
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
