@@ -1,8 +1,9 @@
 $background-color: #ffa500;
+$background-texture: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
 
 .container {
 	& > header {
-		background: $background-color url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+		background: $background-color $background-texture;
 		display: flex;
 		flex-direction: column;
 		height: 400px;
