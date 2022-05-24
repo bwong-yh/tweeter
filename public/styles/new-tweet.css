@@ -23,10 +23,11 @@
   resize: vertical;
   width: 100%;
 }
-.new-tweet form div {
+.new-tweet form footer {
   display: flex;
-  font-family: "Bungee", sans-serif;
+  align-items: center;
   justify-content: space-between;
+  font-family: "Bungee", sans-serif;
   margin: 1rem 0;
 }
 .new-tweet form button {

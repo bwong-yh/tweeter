@@ -27,9 +27,7 @@
 .tweet header .avatar {
   align-self: center;
   display: inline-block;
-  height: 25%;
   margin-right: 0.5rem;
-  width: 25%;
 }
 .tweet header .handle {
   color: #aaaaaa;

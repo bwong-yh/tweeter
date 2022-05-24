@@ -26,7 +26,6 @@
   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/to-top-btn.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
@@ -65,16 +64,19 @@
         <aside>
           <p class="error-message"><i class="fa-solid fa-circle-exclamation"></i> <span></span></p>
         </aside>
+
         <form method="post" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <div>
+          <footer>
             <button type="submit">Tweet</button>
             <output name="counter" id="char-counter" class="counter" for="tweet-text">140</output>
-          </div>
+          </footer>
         </form>
       </section>
+
       <section id="tweets-container"></section>
+
       <button class="to-top-btn v-none"><i class="fa-solid fa-turn-up"></i></button>
     </main>
   </div>

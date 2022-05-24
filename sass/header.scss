@@ -2,8 +2,8 @@ $background-color: #ffa500;
 
 .container {
 	& > header {
-		display: flex;
 		background: $background-color url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+		display: flex;
 		flex-direction: column;
 		height: 400px;
 		justify-content: center;

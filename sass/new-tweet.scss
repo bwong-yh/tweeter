@@ -1,3 +1,5 @@
+@import "./mixins";
+
 $error-border: 0.5px dashed #ff0000;
 $error-message-color: #ff0000;
 $form-font-family: 'Bungee', sans-serif;
@@ -37,10 +39,9 @@ $form-btn-color: #ffffff;
 			width: 100%;
 		}
 
-		div {
-			display: flex;
+		footer {
+			@include center-space-between;
 			font-family: $form-font-family;
-			justify-content: space-between;
 			margin: 1rem 0;
 		}
 

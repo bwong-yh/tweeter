@@ -1,3 +1,5 @@
+@import "./mixins";
+
 $tweet-border: 3px solid #000000;
 $icon-hover-color: #ffa500;
 
@@ -24,9 +26,7 @@ $icon-hover-color: #ffa500;
 
 	header,
 	footer {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		@include center-space-between;
 	}
 
 	header {
@@ -37,9 +37,7 @@ $icon-hover-color: #ffa500;
 		.avatar {
 			align-self: center;
 			display: inline-block;
-			height: 25%;
 			margin-right: 0.5rem;
-			width: 25%;
 		}
 
 		.handle {
