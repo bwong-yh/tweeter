@@ -48,10 +48,10 @@ const loadTweets = () => {
 
 const loadNewTweet = () => {
 	$.get("/tweets", data => {
-		// grab the newest tweet from db and prepend to #tweet-container
+		// grab the newest tweet from db and append to #tweet-container
 		$(".tweets-container").append(createTweetElement(data[data.length - 1]));
 
-		// update previous tweets' post time (10 sec. difference)
+		// update previous tweets' post time (10 sec. difference between the most two tweets)
 		$(".tweet #post-time").each(function(index) {
 			$(this).text(`${timeago.format(new Date(data[index].created_at))}`);
 		});
