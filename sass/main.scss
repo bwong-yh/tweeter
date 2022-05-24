@@ -9,6 +9,11 @@ main {
 		margin: 3.5rem 0;
 	}
 
+	.tweets-container {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
 	.to-top-btn {
 		position: fixed;
 		bottom: 5%;

@@ -5,6 +5,10 @@ main {
 main > * {
   margin: 3.5rem 0;
 }
+main .tweets-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
 main .to-top-btn {
   position: fixed;
   bottom: 5%;

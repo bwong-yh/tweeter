@@ -38,7 +38,7 @@ const createTweetElement = tweetData => {
 
 const renderTweets = data => {
 	data.forEach(tweet => {
-		$("#tweets-container").append(createTweetElement(tweet));
+		$(".tweets-container").append(createTweetElement(tweet));
 	});
 };
 
@@ -49,7 +49,7 @@ const loadTweets = () => {
 const loadNewTweet = () => {
 	$.get("/tweets", data => {
 		// grab the newest tweet from db and prepend to #tweet-container
-		$("#tweets-container").prepend(createTweetElement(data[0]));
+		$(".tweets-container").append(createTweetElement(data[data.length - 1]));
 
 		// update previous tweets' post time (10 sec. difference)
 		$(".tweet #post-time").each(function(index) {
