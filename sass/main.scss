@@ -1,8 +1,31 @@
+$btn-background-color: #4056a1;
+$icon-color: #ffffff;
+
 main {
 	margin: auto;
 	width: 60%;
 
 	& > * {
 		margin: 3.5rem 0;
+	}
+
+	.to-top-btn {
+		position: fixed;
+		bottom: 5%;
+		background-color: $btn-background-color;
+		border: 0px;
+		border-radius: 100%;
+		color: $icon-color;
+		cursor: pointer;
+		height: 3.75rem;
+		margin: 0;
+		opacity: 0.75;
+		right: 3%;
+		transition: opacity 500ms ease-out;
+		width: 3.75rem;
+
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
