@@ -31,10 +31,11 @@ $form-btn-color: #ffffff;
 			background-color: $form-textarea-background-color;
 			border: 0;
 			border-bottom: $form-textarea-border;
-			height: 2.5rem;
-			min-height: 2.5rem;
+			height: 2.25rem;
+			min-height: 2.25rem;
 			margin-top: 1rem;
 			outline: none;
+			overflow: hidden;
 			resize: vertical;
 			width: 100%;
 		}
