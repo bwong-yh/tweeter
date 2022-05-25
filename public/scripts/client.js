@@ -7,10 +7,11 @@
 // Mics. Functions
 const displayErrorMessage = errMessage => {
 	$(".error-message span").text(errMessage);
-	$(".new-tweet aside").slideDown("300");
-	setTimeout(() => {
-		$(".new-tweet aside").slideUp("300");
-	}, 3500);
+	$(".new-tweet aside").slideDown("300", function() {
+		setTimeout(() => {
+			$(this).slideUp("300");
+		}, 3500);
+	});
 };
 
 const escapeText = str => {
