@@ -1,6 +1,6 @@
 // responsible for character counter
 $(function() {
-	$("#tweet-text").on("keyup", function() {
+	$("#tweet-text").on("input", function() {
 		const char = $(this).val();
 		const remainChar = 140 - char.length;
 
